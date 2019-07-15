@@ -2,10 +2,16 @@ package com.cwk.disruptor;
 
 import com.cwk.disruptor.event.Order;
 import com.lmax.disruptor.WorkHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Consumer implements WorkHandler<Order> {
+
+
+    private static Logger logger = LoggerFactory.getLogger(Consumer.class);
+
     private String consumerId;
 
     private static AtomicInteger count = new AtomicInteger(0);
